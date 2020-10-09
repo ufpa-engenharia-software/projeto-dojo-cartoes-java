@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pessoa">
+            <h2><span jhiTranslate="projetoDojoCartoesApp.pessoa.detail.title">Pessoa</span> {{ pessoa.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="projetoDojoCartoesApp.pessoa.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ pessoa.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoDojoCartoesApp.pessoa.email">Email</span></dt>
+                <dd>
+                    <span>{{ pessoa.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoDojoCartoesApp.pessoa.telefone">Telefone</span></dt>
+                <dd>
+                    <span>{{ pessoa.telefone }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoDojoCartoesApp.pessoa.dataNascimento">Data Nascimento</span></dt>
+                <dd>
+                    <span>{{ pessoa.dataNascimento }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoDojoCartoesApp.pessoa.cadastro">Cadastro</span></dt>
+                <dd>
+                    <span>{{ pessoa.cadastro }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoDojoCartoesApp.pessoa.endereco">Endereco</span></dt>
+                <dd>
+                    <div *ngIf="pessoa.endereco">
+                        <a [routerLink]="['/endereco', pessoa.endereco?.id, 'view']">{{ pessoa.endereco?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="projetoDojoCartoesApp.pessoa.categoria">Categoria</span></dt>
+                <dd>
+                    <div *ngIf="pessoa.categoria">
+                        <a [routerLink]="['/categoria', pessoa.categoria?.id, 'view']">{{ pessoa.categoria?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pessoa', pessoa.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

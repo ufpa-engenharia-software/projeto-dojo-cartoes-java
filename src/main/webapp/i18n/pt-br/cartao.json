@@ -1,0 +1,29 @@
+{
+  "projetoDojoCartoesApp": {
+    "cartao": {
+      "home": {
+        "title": "Cartaos",
+        "createLabel": "Criar novo Cartao",
+        "createOrEditLabel": "Criar ou editar Cartao",
+        "notFound": "Nenhum Cartao encontrado"
+      },
+      "created": "Um novo Cartao foi criado com o identificador {{ param }}",
+      "updated": "Um Cartao foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Cartao foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Cartao {{ id }}?"
+      },
+      "detail": {
+        "title": "Cartao"
+      },
+      "ndigitos": "Ndigitos",
+      "status": "Status",
+      "nometitular": "Nometitular",
+      "codseguranca": "Codseguranca",
+      "limitecredito": "Limitecredito",
+      "datavencimento": "Datavencimento",
+      "fatura": "Fatura",
+      "pessoa": "Pessoa"
+    }
+  }
+}

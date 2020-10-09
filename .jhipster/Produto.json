@@ -1,0 +1,41 @@
+{
+  "name": "Produto",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "local",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dataCompra",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "valor",
+      "fieldType": "Float"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "fatura",
+      "otherEntityRelationshipName": "produto",
+      "relationshipName": "fatura",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201009195051",
+  "entityTableName": "produto",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

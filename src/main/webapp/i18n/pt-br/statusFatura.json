@@ -1,0 +1,10 @@
+{
+  "projetoDojoCartoesApp": {
+    "StatusFatura": {
+      "null": "",
+      "GERADA": "GERADA",
+      "ATRASADA": "ATRASADA",
+      "CANCELADA": "CANCELADA"
+    }
+  }
+}

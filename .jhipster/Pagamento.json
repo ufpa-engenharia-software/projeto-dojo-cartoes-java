@@ -1,0 +1,37 @@
+{
+  "name": "Pagamento",
+  "fields": [
+    {
+      "fieldName": "data",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "valor",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "nomeBanco",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "fatura",
+      "otherEntityRelationshipName": "pagamento",
+      "relationshipName": "fatura",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20201009195251",
+  "entityTableName": "pagamento",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

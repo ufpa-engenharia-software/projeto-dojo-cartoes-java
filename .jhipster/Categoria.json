@@ -1,0 +1,36 @@
+{
+  "name": "Categoria",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pontuacaoMinima",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "pessoa",
+      "otherEntityRelationshipName": "categoria",
+      "relationshipName": "pessoa"
+    }
+  ],
+  "changelogDate": "20201009194851",
+  "entityTableName": "categoria",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

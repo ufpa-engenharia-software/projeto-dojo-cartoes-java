@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="produto">
+            <h2><span jhiTranslate="projetoDojoCartoesApp.produto.detail.title">Produto</span> {{ produto.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="projetoDojoCartoesApp.produto.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ produto.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoDojoCartoesApp.produto.local">Local</span></dt>
+                <dd>
+                    <span>{{ produto.local }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoDojoCartoesApp.produto.dataCompra">Data Compra</span></dt>
+                <dd>
+                    <span>{{ produto.dataCompra }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoDojoCartoesApp.produto.valor">Valor</span></dt>
+                <dd>
+                    <span>{{ produto.valor }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoDojoCartoesApp.produto.fatura">Fatura</span></dt>
+                <dd>
+                    <div *ngIf="produto.fatura">
+                        <a [routerLink]="['/fatura', produto.fatura?.id, 'view']">{{ produto.fatura?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/produto', produto.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

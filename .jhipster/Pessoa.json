@@ -1,0 +1,58 @@
+{
+  "name": "Pessoa",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telefone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dataNascimento",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "cadastro",
+      "fieldType": "ZonedDateTime"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "cartao",
+      "otherEntityRelationshipName": "pessoa",
+      "relationshipName": "cartao"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "endereco",
+      "otherEntityRelationshipName": "pessoa",
+      "relationshipName": "endereco",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "categoria",
+      "otherEntityRelationshipName": "pessoa",
+      "relationshipName": "categoria",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201009194651",
+  "entityTableName": "pessoa",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

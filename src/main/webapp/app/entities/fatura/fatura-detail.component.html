@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fatura">
+            <h2><span jhiTranslate="projetoDojoCartoesApp.fatura.detail.title">Fatura</span> {{ fatura.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="projetoDojoCartoesApp.fatura.dataDeProcessamento">Data De Processamento</span></dt>
+                <dd>
+                    <span>{{ fatura.dataDeProcessamento }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoDojoCartoesApp.fatura.valorTotal">Valor Total</span></dt>
+                <dd>
+                    <span>{{ fatura.valorTotal }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoDojoCartoesApp.fatura.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'projetoDojoCartoesApp.StatusFatura.' + fatura.status }}">{{ fatura.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoDojoCartoesApp.fatura.pontuacaoGanhar">Pontuacao Ganhar</span></dt>
+                <dd>
+                    <span>{{ fatura.pontuacaoGanhar }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetoDojoCartoesApp.fatura.pagamento">Pagamento</span></dt>
+                <dd>
+                    <div *ngIf="fatura.pagamento">
+                        <a [routerLink]="['/pagamento', fatura.pagamento?.id, 'view']">{{ fatura.pagamento?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="projetoDojoCartoesApp.fatura.cartao">Cartao</span></dt>
+                <dd>
+                    <div *ngIf="fatura.cartao">
+                        <a [routerLink]="['/cartao', fatura.cartao?.id, 'view']">{{ fatura.cartao?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/fatura', fatura.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

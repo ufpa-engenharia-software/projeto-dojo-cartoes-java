@@ -1,0 +1,25 @@
+{
+  "projetoDojoCartoesApp": {
+    "pagamento": {
+      "home": {
+        "title": "Pagamentos",
+        "createLabel": "Criar novo Pagamento",
+        "createOrEditLabel": "Criar ou editar Pagamento",
+        "notFound": "Nenhum Pagamento encontrado"
+      },
+      "created": "Um novo Pagamento foi criado com o identificador {{ param }}",
+      "updated": "Um Pagamento foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Pagamento foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Pagamento {{ id }}?"
+      },
+      "detail": {
+        "title": "Pagamento"
+      },
+      "data": "Data",
+      "valor": "Valor",
+      "nomeBanco": "Nome Banco",
+      "fatura": "Fatura"
+    }
+  }
+}

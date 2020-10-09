@@ -1,0 +1,29 @@
+{
+  "projetoDojoCartoesApp": {
+    "pessoa": {
+      "home": {
+        "title": "Pessoas",
+        "createLabel": "Create a new Pessoa",
+        "createOrEditLabel": "Create or edit a Pessoa",
+        "notFound": "No Pessoas found"
+      },
+      "created": "A new Pessoa is created with identifier {{ param }}",
+      "updated": "A Pessoa is updated with identifier {{ param }}",
+      "deleted": "A Pessoa is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pessoa {{ id }}?"
+      },
+      "detail": {
+        "title": "Pessoa"
+      },
+      "nome": "Nome",
+      "email": "Email",
+      "telefone": "Telefone",
+      "dataNascimento": "Data Nascimento",
+      "cadastro": "Cadastro",
+      "cartao": "Cartao",
+      "endereco": "Endereco",
+      "categoria": "Categoria"
+    }
+  }
+}

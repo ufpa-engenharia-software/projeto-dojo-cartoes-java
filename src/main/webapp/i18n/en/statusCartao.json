@@ -1,0 +1,10 @@
+{
+  "projetoDojoCartoesApp": {
+    "StatusCartao": {
+      "null": "",
+      "BLOQUEADO": "BLOQUEADO",
+      "LIBERADO": "LIBERADO",
+      "ROUBADO": "ROUBADO"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "projetoDojoCartoesApp": {
+    "fatura": {
+      "home": {
+        "title": "Faturas",
+        "createLabel": "Criar novo Fatura",
+        "createOrEditLabel": "Criar ou editar Fatura",
+        "notFound": "Nenhum Fatura encontrado"
+      },
+      "created": "Um novo Fatura foi criado com o identificador {{ param }}",
+      "updated": "Um Fatura foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Fatura foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Fatura {{ id }}?"
+      },
+      "detail": {
+        "title": "Fatura"
+      },
+      "dataDeProcessamento": "Data De Processamento",
+      "valorTotal": "Valor Total",
+      "status": "Status",
+      "pontuacaoGanhar": "Pontuacao Ganhar",
+      "pagamento": "Pagamento",
+      "produto": "Produto",
+      "cartao": "Cartao"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-fatura-heading" jhiTranslate="projetoDojoCartoesApp.fatura.home.createOrEditLabel">Create or edit a Fatura</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoDojoCartoesApp.fatura.dataDeProcessamento" for="field_dataDeProcessamento">Data De Processamento</label>
+                    <div class="input-group">
+                        <input id="field_dataDeProcessamento" type="text" class="form-control" name="dataDeProcessamento" ngbDatepicker #dataDeProcessamentoDp="ngbDatepicker" formControlName="dataDeProcessamento"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dataDeProcessamentoDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoDojoCartoesApp.fatura.valorTotal" for="field_valorTotal">Valor Total</label>
+                    <input type="number" class="form-control" name="valorTotal" id="field_valorTotal"
+                           formControlName="valorTotal"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoDojoCartoesApp.fatura.status" for="field_status">Status</label>
+                    <select class="form-control" name="status" formControlName="status" id="field_status">
+                        <option value="GERADA">{{ 'projetoDojoCartoesApp.StatusFatura.GERADA' | translate }}</option>
+                        <option value="ATRASADA">{{ 'projetoDojoCartoesApp.StatusFatura.ATRASADA' | translate }}</option>
+                        <option value="CANCELADA">{{ 'projetoDojoCartoesApp.StatusFatura.CANCELADA' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoDojoCartoesApp.fatura.pontuacaoGanhar" for="field_pontuacaoGanhar">Pontuacao Ganhar</label>
+                    <input type="text" class="form-control" name="pontuacaoGanhar" id="field_pontuacaoGanhar"
+                           formControlName="pontuacaoGanhar"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoDojoCartoesApp.fatura.pagamento" for="field_pagamento">Pagamento</label>
+                    <select class="form-control" id="field_pagamento" name="pagamento" formControlName="pagamento">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="pagamentoOption.id === editForm.get('pagamento')!.value?.id ? editForm.get('pagamento')!.value : pagamentoOption" *ngFor="let pagamentoOption of pagamentos; trackBy: trackById">{{ pagamentoOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetoDojoCartoesApp.fatura.cartao" for="field_cartao">Cartao</label>
+                    <select class="form-control" id="field_cartao" name="cartao" formControlName="cartao">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="cartaoOption.id === editForm.get('cartao')!.value?.id ? editForm.get('cartao')!.value : cartaoOption" *ngFor="let cartaoOption of cartaos; trackBy: trackById">{{ cartaoOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

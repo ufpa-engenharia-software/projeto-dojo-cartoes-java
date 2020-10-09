@@ -1,0 +1,79 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="projetoDojoCartoesApp.fatura.home.title">Faturas</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-fatura" [routerLink]="['/fatura/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="projetoDojoCartoesApp.fatura.home.createLabel">
+            Create a new Fatura
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="faturas?.length === 0">
+        <span jhiTranslate="projetoDojoCartoesApp.fatura.home.notFound">No faturas found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="faturas && faturas.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="projetoDojoCartoesApp.fatura.dataDeProcessamento">Data De Processamento</span></th>
+                    <th scope="col" ><span jhiTranslate="projetoDojoCartoesApp.fatura.valorTotal">Valor Total</span></th>
+                    <th scope="col" ><span jhiTranslate="projetoDojoCartoesApp.fatura.status">Status</span></th>
+                    <th scope="col" ><span jhiTranslate="projetoDojoCartoesApp.fatura.pontuacaoGanhar">Pontuacao Ganhar</span></th>
+                    <th scope="col" ><span jhiTranslate="projetoDojoCartoesApp.fatura.pagamento">Pagamento</span></th>
+                    <th scope="col" ><span jhiTranslate="projetoDojoCartoesApp.fatura.cartao">Cartao</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let fatura of faturas ;trackBy: trackId">
+                    <td><a [routerLink]="['/fatura', fatura.id, 'view']">{{ fatura.id }}</a></td>
+                    <td>{{ fatura.dataDeProcessamento | date:'mediumDate' }}</td>
+                    <td>{{ fatura.valorTotal }}</td>
+                    <td jhiTranslate="{{ 'projetoDojoCartoesApp.StatusFatura.' + fatura.status }}">{{ fatura.status }}</td>
+                    <td>{{ fatura.pontuacaoGanhar }}</td>
+                    <td>
+                        <div *ngIf="fatura.pagamento">
+                            <a [routerLink]="['/pagamento', fatura.pagamento?.id, 'view']" >{{ fatura.pagamento?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="fatura.cartao">
+                            <a [routerLink]="['/cartao', fatura.cartao?.id, 'view']" >{{ fatura.cartao?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/fatura', fatura.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/fatura', fatura.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(fatura)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

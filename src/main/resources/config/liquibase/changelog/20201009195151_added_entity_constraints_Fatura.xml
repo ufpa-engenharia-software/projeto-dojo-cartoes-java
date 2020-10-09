@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Fatura.
+    -->
+    <changeSet id="20201009195151-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="pagamento_id"
+                                 baseTableName="fatura"
+                                 constraintName="fk_fatura_pagamento_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pagamento"/>
+
+        <addForeignKeyConstraint baseColumnNames="cartao_id"
+                                 baseTableName="fatura"
+                                 constraintName="fk_fatura_cartao_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="cartao"/>
+
+    </changeSet>
+</databaseChangeLog>
